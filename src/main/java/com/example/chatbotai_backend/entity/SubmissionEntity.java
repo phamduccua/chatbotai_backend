@@ -1,9 +1,13 @@
 package com.example.chatbotai_backend.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name="submissionbaitaplaptrinh")
 public class SubmissionEntity {

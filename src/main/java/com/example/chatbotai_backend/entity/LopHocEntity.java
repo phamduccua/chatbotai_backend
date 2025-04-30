@@ -25,4 +25,7 @@ public class LopHocEntity {
     @JoinColumn(name="Id_MonHoc")
     private MonHocEntity monHoc;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="Id_GiangVien")
+    private UserEntity giangVien;
 }

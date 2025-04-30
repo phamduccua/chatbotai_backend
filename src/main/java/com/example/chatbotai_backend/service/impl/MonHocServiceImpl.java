@@ -7,6 +7,8 @@ import com.example.chatbotai_backend.service.MonHocService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MonHocServiceImpl implements MonHocService {
     @Autowired
@@ -16,5 +18,15 @@ public class MonHocServiceImpl implements MonHocService {
     @Override
     public void addMonHoc(MonHocDTO monHocDTO) {
         monHocRepository.save(monHocConvert.toMonHocEntity(monHocDTO));
+    }
+
+    @Override
+    public void updateMonHoc(MonHocDTO monHocDTO) {
+        monHocRepository.save(monHocConvert.toMonHocEntity(monHocDTO));
+    }
+
+    @Override
+    public void deleteMonHoc(List<Integer> ids) {
+        monHocRepository.deleteByIdIn(ids);
     }
 }

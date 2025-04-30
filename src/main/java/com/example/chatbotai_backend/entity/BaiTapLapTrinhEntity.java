@@ -23,6 +23,9 @@ public class BaiTapLapTrinhEntity {
     @Column(name="Ten")
     private String ten;
 
+    @Column(name="DeBai")
+    private String deBai;
+
     @Column(name="YeuCauDauVao")
     private String yeuCauDauVao;
 
@@ -33,11 +36,16 @@ public class BaiTapLapTrinhEntity {
     private String gioiHanDauVao;
 
     @Column(name="GioiHanBoNho")
-    private String gioiHanBoNho;
+    private Integer gioiHanBoNho;
 
     @Column(name="GioiHanThoiGian")
-    private String gioiHanThoiGian;
+    private Double gioiHanThoiGian;
 
     @OneToMany(mappedBy = "baiTapLapTrinh", orphanRemoval = true)
     private List<SubmissionEntity> submissionEntityList = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="Id_CuocThi")
+    private CuocThiEntity cuocThiEntity;
+
 }

@@ -5,11 +5,9 @@ import com.example.chatbotai_backend.model.dto.MonHocDTO;
 import com.example.chatbotai_backend.service.MonHocService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -22,6 +20,24 @@ public class MonHocController {
         try{
             monHocService.addMonHoc(monHocDTO);
             return ResponseEntity.ok().body("Thêm môn học thành công");
+        }catch(Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    @PutMapping("update/mon-hoc")
+    public ResponseEntity<?> updateMonHoc(@RequestBody MonHocDTO monHocDTO) {
+        try{
+            monHocService.updateMonHoc(monHocDTO);
+            return ResponseEntity.ok().body("Sua mon hoc thanh cong");
+        }catch(Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    @DeleteMapping("delete/mon-hoc")
+    public ResponseEntity<?> deleteMonHoc(@RequestBody List<Integer> ids) {
+        try{
+            monHocService.deleteMonHoc(ids);
+            return ResponseEntity.ok().body("Xoa mon hoc thanh cong");
         }catch(Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
