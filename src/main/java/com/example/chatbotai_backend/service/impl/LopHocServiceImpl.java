@@ -22,6 +22,9 @@ public class LopHocServiceImpl implements LopHocService {
 
     @Override
     public void updateLopHoc(LopHocDTO lopHocDTO) {
+        if(lopHocDTO.getId() == null){
+            throw new IllegalArgumentException("ID của lớp học không được để trống");
+        }
         lopHocRepository.save(lopHocConvert.toLopHocEntity(lopHocDTO));
     }
 

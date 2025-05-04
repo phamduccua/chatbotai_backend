@@ -22,6 +22,9 @@ public class MonHocServiceImpl implements MonHocService {
 
     @Override
     public void updateMonHoc(MonHocDTO monHocDTO) {
+        if(monHocDTO.getId() == null){
+            throw new IllegalArgumentException("ID của môn học không được để trống");
+        }
         monHocRepository.save(monHocConvert.toMonHocEntity(monHocDTO));
     }
 

@@ -23,6 +23,9 @@ public class BaiTapLapTrinhServiceImpl implements BaiTapLapTrinhService {
 
     @Override
     public void updateBaiTapLapTrinh(BaiTapLapTrinhDTO baiTapLapTrinhDTO) {
+        if(baiTapLapTrinhDTO.getId() == null){
+            throw new IllegalArgumentException("ID của bài tập không được để trống");
+        }
         baiTapLapTrinhRepository.save(baiTapLapTrinhConvert.toBaiTapLapTrinhEntity(baiTapLapTrinhDTO));
     }
 

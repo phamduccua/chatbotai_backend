@@ -20,3 +20,6 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://chatbot:EXMMUY8IRfkdwTl5@cluster0.jzqsko7.mongodb.net/chatbot?retryWrites=true&w=majority&appName=Cluster0
+redis:
+  host: localhost
+  port: 6379

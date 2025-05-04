@@ -9,13 +9,12 @@ import java.util.List;
 
 @Getter
 @Setter
-@Document(collection  = "BaiTapTracNghiem")
-public class BaiTapTracNghiemEntity {
+@Document(collection = "BaiGiang")
+public class BaiGiangEntity {
     @Id
     private String id;
-
-    private String deBai;
-    private List<String> cacDapAn;
-    private String dapAnDung;
-    private Integer idCuocThi;
+    private String ten;
+    private String chiTiet;
+    private List<String> viDu;
+    private Integer idMonHoc;
 }

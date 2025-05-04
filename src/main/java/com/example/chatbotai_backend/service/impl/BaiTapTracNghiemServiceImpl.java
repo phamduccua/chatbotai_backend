@@ -22,6 +22,9 @@ public class BaiTapTracNghiemServiceImpl implements BaiTapTracNghiemService {
 
     @Override
     public void updateBaiTapTracNghiem(BaiTapTracNghiemDTO baiTapTracNghiemDTO) {
+        if(baiTapTracNghiemDTO.getId() == null || baiTapTracNghiemDTO.getId().equals("")){
+            throw new IllegalArgumentException("ID của bài tập không được để trống");
+        }
         baiTapTracNghiemRepository.save(baiTapTracNghiemConvert.toBaiTapTracNghiemEntity(baiTapTracNghiemDTO));
     }
 

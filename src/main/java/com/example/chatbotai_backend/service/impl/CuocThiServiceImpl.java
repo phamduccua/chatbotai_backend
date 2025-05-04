@@ -22,6 +22,9 @@ public class CuocThiServiceImpl implements CuocThiService {
 
     @Override
     public void updateCuocThi(CuocThiDTO cuocThiDTO) {
+        if(cuocThiDTO.getId() == null){
+            throw new IllegalArgumentException("ID của cuộc thi không được để trống");
+        }
         cuocThiRepository.save(cuocThiConvert.toCuocThiEntity(cuocThiDTO));
     }
 
