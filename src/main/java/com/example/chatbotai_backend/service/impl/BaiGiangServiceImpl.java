@@ -4,6 +4,7 @@ import com.example.chatbotai_backend.convert.BaiGiangConvert;
 import com.example.chatbotai_backend.entity.BaiGiangEntity;
 import com.example.chatbotai_backend.model.dto.BaiGiangDTO;
 import com.example.chatbotai_backend.model.response.BaiGiangResponse;
+import com.example.chatbotai_backend.model.response.IdAndNameBaiGiang;
 import com.example.chatbotai_backend.repository.BaiGiangRepository;
 import com.example.chatbotai_backend.service.BaiGiangService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,11 +39,9 @@ public class BaiGiangServiceImpl implements BaiGiangService {
     }
 
     @Override
-    public List<BaiGiangResponse> getBaiGiangByMonHoc(Integer id) {
-        List<BaiGiangEntity> baiGiangEntities = baiGiangRepository.findByIdMonHoc(id);
-        List<BaiGiangResponse> baiGiangResponses = baiGiangEntities.stream()
-                .map(item -> baiGiangConvert.toBaiGiangResponse(item)).collect(Collectors.toList());
-        return baiGiangResponses;
+    public List<IdAndNameBaiGiang> getBaiGiangByMonHoc(Integer id) {
+        List<IdAndNameBaiGiang> result = baiGiangRepository.findByIdMonHoc(id);
+        return result;
     }
 
     @Override

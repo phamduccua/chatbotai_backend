@@ -1,7 +1,9 @@
 package com.example.chatbotai_backend.service.impl;
 
 import com.example.chatbotai_backend.convert.BaiTapTracNghiemConvert;
+import com.example.chatbotai_backend.entity.BaiTapTracNghiemEntity;
 import com.example.chatbotai_backend.model.dto.BaiTapTracNghiemDTO;
+import com.example.chatbotai_backend.model.response.BaiTapTracNghiemResponse;
 import com.example.chatbotai_backend.repository.BaiTapTracNghiemRepository;
 import com.example.chatbotai_backend.service.BaiTapTracNghiemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +33,11 @@ public class BaiTapTracNghiemServiceImpl implements BaiTapTracNghiemService {
     @Override
     public void deleteBaiTapTracNghiem(List<String> ids) {
         baiTapTracNghiemRepository.deleteByIdIn(ids);
+    }
+
+    @Override
+    public BaiTapTracNghiemResponse getBaiTapTracNghiem(String id) {
+        BaiTapTracNghiemEntity baiTapTracNghiemEntity = baiTapTracNghiemRepository.findById(id).orElse(null);
+        return baiTapTracNghiemConvert.toBaiTapTracNghiemResponse(baiTapTracNghiemEntity);
     }
 }

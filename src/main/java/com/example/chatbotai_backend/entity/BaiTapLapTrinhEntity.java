@@ -41,11 +41,14 @@ public class BaiTapLapTrinhEntity {
     @Column(name="GioiHanThoiGian")
     private Double gioiHanThoiGian;
 
+    @Column(name="Level")
+    private Integer level;
+
     @OneToMany(mappedBy = "baiTapLapTrinh", orphanRemoval = true)
     private List<SubmissionEntity> submissionEntityList = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Id_CuocThi")
-    private CuocThiEntity cuocThiEntity;
+    @JoinColumn(name="Id_BaiThucHanh")
+    private BaiThucHanhEntity baiThucHanhEntity;
 
 }

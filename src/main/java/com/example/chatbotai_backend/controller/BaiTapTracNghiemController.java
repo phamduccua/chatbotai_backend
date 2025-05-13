@@ -1,6 +1,8 @@
 package com.example.chatbotai_backend.controller;
 
 import com.example.chatbotai_backend.model.dto.BaiTapTracNghiemDTO;
+import com.example.chatbotai_backend.model.response.BaiTapLapTrinhResponse;
+import com.example.chatbotai_backend.model.response.BaiTapTracNghiemResponse;
 import com.example.chatbotai_backend.service.BaiTapTracNghiemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +38,15 @@ public class BaiTapTracNghiemController {
         try{
             baiTapTracNghiemService.deleteBaiTapTracNghiem(ids);
             return ResponseEntity.ok().body("Xoa bai tap thanh cong");
+        }catch(Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    @GetMapping("get/bai-tap-trac-nghien-{id}")
+    public ResponseEntity<?> getBaiTapTracNghiem(@PathVariable String id) {
+        try{
+            BaiTapTracNghiemResponse baiTapTracNghiemResponse = baiTapTracNghiemService.getBaiTapTracNghiem(id);
+            return ResponseEntity.ok().body(baiTapTracNghiemResponse);
         }catch(Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }

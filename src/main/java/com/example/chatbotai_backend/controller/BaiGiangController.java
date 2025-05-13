@@ -2,6 +2,7 @@ package com.example.chatbotai_backend.controller;
 
 import com.example.chatbotai_backend.model.dto.BaiGiangDTO;
 import com.example.chatbotai_backend.model.response.BaiGiangResponse;
+import com.example.chatbotai_backend.model.response.IdAndNameBaiGiang;
 import com.example.chatbotai_backend.service.BaiGiangService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -44,13 +45,13 @@ public class BaiGiangController {
     @GetMapping("get/bai-giang/by/mon-hoc-{id}")
     public ResponseEntity<?> getBaiGiangByMonHoc(@PathVariable("id") Integer id){
         try{
-            List<BaiGiangResponse> result = baiGiangService.getBaiGiangByMonHoc(id);
+            List<IdAndNameBaiGiang> result = baiGiangService.getBaiGiangByMonHoc(id);
             return ResponseEntity.ok().body(result);
         }catch(Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-    @GetMapping("search/bai-giang-{id}")
+    @GetMapping("get/bai-giang-{id}")
     public ResponseEntity<?> searchBaiGiang(@PathVariable String id){
         try{
             BaiGiangResponse baiGiangResponse = baiGiangService.searchBaiGiangById(id);

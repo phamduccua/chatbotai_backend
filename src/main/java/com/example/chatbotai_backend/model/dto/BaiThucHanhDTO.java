@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CuocThiDTO {
+public class BaiThucHanhDTO {
     private Integer id;
     @NotBlank(message = "Ten cuoc thi khong duoc trong")
     private String ten;

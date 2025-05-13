@@ -19,6 +19,8 @@ public class BaiTapLapTrinhDTO {
     private String gioiHanDauVao;
     private Integer gioiHanBoNho;
     private Double gioiHanThoiGian;
+    @NotNull(message = "Do kho khong dươc de trong")
+    private Integer level;
     @NotNull(message = "Id cuoc thi khong duoc trong")
-    private Integer idCuocThi;
+    private Integer idBaiThucHanh;
 }

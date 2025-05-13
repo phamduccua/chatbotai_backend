@@ -10,8 +10,8 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name="cuocthi")
-public class CuocThiEntity {
+@Table(name="baithuchanh")
+public class BaiThucHanhEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="Id")
@@ -27,6 +27,6 @@ public class CuocThiEntity {
     @JoinColumn(name="Id_MonHoc")
     private MonHocEntity monHoc;
 
-    @OneToMany(mappedBy = "cuocThiEntity", orphanRemoval = true)
+    @OneToMany(mappedBy = "baiThucHanhEntity", orphanRemoval = true)
     private List<BaiTapLapTrinhEntity> baiTapLapTrinh = new ArrayList<>();
 }

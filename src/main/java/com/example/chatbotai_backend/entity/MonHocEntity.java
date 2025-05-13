@@ -24,7 +24,7 @@ public class MonHocEntity {
     private String chiTiet;
 
     @OneToMany(mappedBy = "monHoc", orphanRemoval = true)
-    private List<CuocThiEntity> cuocThiEntities = new ArrayList<>();
+    private List<BaiThucHanhEntity> baiThucHanhEntities = new ArrayList<>();
 
     @OneToMany(mappedBy = "monHoc", orphanRemoval = true)
     private List<LopHocEntity> lopHocEntities = new ArrayList<>();
