@@ -14,13 +14,13 @@ import java.util.List;
 public class MonHocEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id")
+    @Column(name="id")
     private Integer id;
 
-    @Column(name="Ten")
+    @Column(name="ten")
     private String ten;
 
-    @Column(name="ChiTiet")
+    @Column(name="chitiet")
     private String chiTiet;
 
     @OneToMany(mappedBy = "monHoc", orphanRemoval = true)

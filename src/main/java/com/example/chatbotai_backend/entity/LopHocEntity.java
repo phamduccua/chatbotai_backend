@@ -12,20 +12,20 @@ import lombok.Setter;
 public class LopHocEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id")
+    @Column(name="id")
     private Integer id;
 
-    @Column(name="MaLopHoc")
+    @Column(name="malophoc")
     private String maLopHoc;
 
-    @Column(name="TenLopHoc")
+    @Column(name="tenlophoc")
     private String tenLopHoc;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Id_MonHoc")
+    @JoinColumn(name="id_monhoc")
     private MonHocEntity monHoc;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Id_GiangVien")
+    @JoinColumn(name="id_giangvien")
     private UserEntity giangVien;
 }

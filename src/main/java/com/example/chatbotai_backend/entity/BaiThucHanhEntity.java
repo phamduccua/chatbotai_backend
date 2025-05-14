@@ -14,17 +14,17 @@ import java.util.List;
 public class BaiThucHanhEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id")
+    @Column(name="id")
     private int id;
 
-    @Column(name="Ten")
+    @Column(name="ten")
     private String ten;
 
-    @Column(name="ChiTiet")
+    @Column(name="chitiet")
     private String chiTiet;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Id_MonHoc")
+    @JoinColumn(name="id_monhoc")
     private MonHocEntity monHoc;
 
     @OneToMany(mappedBy = "baiThucHanhEntity", orphanRemoval = true)

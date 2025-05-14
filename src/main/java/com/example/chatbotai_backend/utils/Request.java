@@ -12,11 +12,11 @@ import java.util.Map;
 
 @Component
 public class Request {
-    private String url = "http://localhost:8082/chatbotai";
+    private String url = "https://my-flask-api-repo-40994065734.asia-southeast1.run.app/api/chat";
     public String PostRequest(String messesge){
         RestTemplate restTemplate = new RestTemplate();
         Map<String,String> requestBody = new HashMap<>();
-        requestBody.put("message",messesge);
+        requestBody.put("query",messesge);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);

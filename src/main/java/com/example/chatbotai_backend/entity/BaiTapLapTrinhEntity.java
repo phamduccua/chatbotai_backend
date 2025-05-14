@@ -14,41 +14,41 @@ import java.util.List;
 public class BaiTapLapTrinhEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id")
+    @Column(name="id")
     private Integer id;
 
-    @Column(name="Ma")
+    @Column(name="ma")
     private String ma;
 
-    @Column(name="Ten")
+    @Column(name="ten")
     private String ten;
 
-    @Column(name="DeBai")
+    @Column(name="debai")
     private String deBai;
 
-    @Column(name="YeuCauDauVao")
+    @Column(name="yeucaudauvao")
     private String yeuCauDauVao;
 
-    @Column(name="YeuCauDauRa")
+    @Column(name="yeucaudaura")
     private String yeuCauDauRa;
 
-    @Column(name="GioiHanDauVao")
+    @Column(name="gioihandauvao")
     private String gioiHanDauVao;
 
-    @Column(name="GioiHanBoNho")
+    @Column(name="gioihanbonho")
     private Integer gioiHanBoNho;
 
-    @Column(name="GioiHanThoiGian")
+    @Column(name="gioihanthoigian")
     private Double gioiHanThoiGian;
 
-    @Column(name="Level")
+    @Column(name="level")
     private Integer level;
 
     @OneToMany(mappedBy = "baiTapLapTrinh", orphanRemoval = true)
     private List<SubmissionEntity> submissionEntityList = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Id_BaiThucHanh")
+    @JoinColumn(name="id_baithuchanh")
     private BaiThucHanhEntity baiThucHanhEntity;
 
 }

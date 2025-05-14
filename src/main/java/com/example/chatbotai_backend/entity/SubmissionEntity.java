@@ -13,28 +13,28 @@ import java.time.LocalDateTime;
 public class SubmissionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id")
+    @Column(name="id")
     private Integer id;
 
-    @Column(name="MaCode")
+    @Column(name="macode")
     private String maCode;
 
-    @Column(name="TrangThai")
+    @Column(name="trangthai")
     private String trangThai;
 
-    @Column(name="ChiTietLoiBienDich")
+    @Column(name="chitietloibiendich")
     private String chiTietLoiBienDich;
 
-    @Column(name="ThoiGianNopBai")
+    @Column(name="thoigiannopbai")
     private LocalDateTime thoiGianNopBai;
 
-    @Column(name="ThoiGianChay")
+    @Column(name="thoigianchay")
     private Double thoiGianChay;
 
-    @Column(name="BoNhoSuDung")
+    @Column(name="bonhosudung")
     private Integer bonhoSuDung;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Id_BaiTapLapTrinh")
+    @JoinColumn(name="id_baitaplaptrinh")
     private BaiTapLapTrinhEntity baiTapLapTrinh;
 }

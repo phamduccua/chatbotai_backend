@@ -16,25 +16,25 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 
-    @Column(name="Username")
+    @Column(name="username")
     private String username;
 
-    @Column(name="Fullname")
+    @Column(name="fullname")
     private String fullname;
 
-    @Column(name="Email")
+    @Column(name="email")
     private String email;
 
-    @Column(name="Password")
+    @Column(name="password")
     private String password;
 
-    @Column(name="Address")
+    @Column(name="address")
     private String address;
 
-    @Column(name="Role")
+    @Column(name="role")
     private String role;
 
-    @Column(name="Status")
+    @Column(name="status")
     private Integer status;
 
     @OneToMany(mappedBy = "giangVien", orphanRemoval = true)
