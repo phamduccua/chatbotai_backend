@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Transactional
 @Repository
@@ -18,4 +19,5 @@ public interface BaiTapLapTrinhRepository extends JpaRepository<BaiTapLapTrinhEn
     BaiTapLapTrinhEntity findByMa(String ma);
     @Query("SELECT new com.example.chatbotai_backend.model.response.CodeAndNameAndLevelBaiLapTrinh(b.id,b.ma, b.ten, b.level) FROM BaiTapLapTrinhEntity b")
     List<CodeAndNameAndLevelBaiLapTrinh> find();
+    Optional<BaiTapLapTrinhEntity> findById(Integer id);
 }
